@@ -10,13 +10,13 @@ from netaddr import IPNetwork,IPAddress
 from ctypes import *
 
 # 监听主机，即监听那个网络接口，下面的ip为我的kali的ip
-host = "192.168.88.184"
+host = "192.168.1.103"
 
 # 扫描的目标子网
 # subnet = "192.168.1.0/24"
 # 没有命令行参数,默认192.168.1.0/24
 if len(sys.argv) == 1:
-    subnet = "192.168.88.0/24"
+    subnet = "192.168.1.0/24"
 else:
     subnet = sys.argv[1]
 
@@ -115,7 +115,7 @@ try:
         raw_buffer =  sniffer.recvfrom(65565)[0]
 
         # 将缓冲区的前20个字节按IP头进行解析
-        ip_header = IP(raw_buffer[0:20])
+        ip_header = IP(raw_buffer[0:32])
 
         # 输出协议和通信双方IP地址
         #print  "Protocol: %s %s ->  %s" % (ip_header.protocol, ip_header.src_address, ip_header.dst_address)
