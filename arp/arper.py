@@ -8,7 +8,7 @@ import signal
 from sniffer_password import *
 
 interface   = "eth0"    #要嗅探的网卡
-target_ip   = "192.168.88.194"        #目标ip,这里测试的是另外一台虚拟机winxp
+target_ip   = "192.168.88.193"        #目标ip,这里测试的是另外一台虚拟机winxp
 gateway_ip  = "192.168.88.1"        #网关ip，这里是虚拟机的网关
 packet_count = 10000
 
