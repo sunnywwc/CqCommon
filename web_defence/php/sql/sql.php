@@ -12,6 +12,14 @@ for ($i=1; $i<=5; $i++)
     }
 }
 
+if( eregi ("/=|\#|--|\.|\*|\\\|\'|\"|select|update|and|or|delete|insert|
+trancate|char|into|substr|ascii|declare|exec
+|count|master|into|drop|execute/i", $usr) )
+{
+    print('find it \\a\ ');
+   // return;
+}
+
 $username = substr($usr,0,12); //最大长度为12 
 $password = substr($pwd,0,12); //最大长度为12 
 $username = htmlspecialchars($usr);

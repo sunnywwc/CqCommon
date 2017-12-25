@@ -2,7 +2,7 @@
 <%
 String sqlcmd = "select * from table1 where user = \'user\' or \'1\'=\'1\'";
 String sqlstr = "\\=|\\#|\\--|\\'|\\*|\\:|\\\\|\\+";
-Pattern p = Pattern.compile(sqlstr);    
+Pattern p = Pattern.compile(sqlstr,Pattern.CASE_INSENSITIVE);    
 Matcher m = p.matcher(sqlcmd); 
 while(m.find())
 {
